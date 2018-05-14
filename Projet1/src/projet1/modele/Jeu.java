@@ -9,7 +9,15 @@ public class Jeu {
 		
 	}
 	
-	public void initTerrain() {
+	public Link getLink() {
+		return this.hero;
+	}
+	
+	public int[][] getTerrain() {
+		return this.terrain;
+	}
+	
+	public int[][] initTerrain() {
 		this.terrain[0][0] = 210;
 		this.terrain[0][1] = 210;
 		this.terrain[0][2] = 210;
@@ -410,17 +418,32 @@ public class Jeu {
 		this.terrain[19][17] = 210;
 		this.terrain[19][18] = 210;
 		this.terrain[19][19] = 210;
-
+		return terrain;
 	}
 	
 	public String imageDe(int i) {
-		String img = "";
+		String img = "tiles_12.tsx";
 		if (i == 210) { // 210, 1, 2, 3, 4, 5, 6, 25, 26, 27, 28, 29, 30, 49, 50, 51, 52, 53, 54, 73, 74, 75, 76, 77, 78, 
 			   // 97, 98, 99, 100, 101, 102, 265, 266, 267, 268, 32, 33, 34, 35, 56, 57, 58, 59, 80, 81, 82, 83,
 				// 104, 105, 106, 107
 			img = "";
 		}
 		else if (i == 1) {
+			img = "";
+		}
+		else if (i == 2) {
+			img = "";
+		}
+		else if (i == 3) {
+			img = "";
+		}
+		else if (i == 4) {
+			img = "";
+		}
+		else if (i == 5) {
+			img = "";
+		}
+		else if (i == 6) {
 			img = "";
 		}
 		return img;
@@ -431,6 +454,17 @@ public class Jeu {
 		for (int i = 0; i < tab.length; i++) {
 			for (int j = 0; j < tab[i].length; j++) {
 				txt += tab[i][j] + "\t";
+			}
+			txt += "\n";
+		}
+		return txt;
+	}
+	
+	public String toString(int[][] tab) {
+		String txt = "";
+		for (int i = 0; i < tab.length; i++) {
+			for (int j = 0; j < tab[i].length; j++) {
+				txt += imageDe(tab[i][j]);
 			}
 			txt += "\n";
 		}

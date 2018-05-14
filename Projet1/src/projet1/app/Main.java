@@ -14,7 +14,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 		FXMLLoader loader = new FXMLLoader(); 											
-		URL url = new File("src/projet1/vue/jeuZelda.fxml").toURI().toURL();		
+		URL url = new File("Projet1/src/projet1/vue/jeuZelda.fxml").toURI().toURL();		
 		loader.setLocation(url);													
 		System.out.println(loader.getLocation());							
 		Pane root = new Pane(); 									
