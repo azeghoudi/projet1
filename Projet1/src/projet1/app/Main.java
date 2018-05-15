@@ -14,11 +14,11 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 		FXMLLoader loader = new FXMLLoader(); 											
-		URL url = new File("Projet1/src/projet1/vue/jeuZelda.fxml").toURI().toURL();		
+		URL url = new File("src/projet1/vue/jeuZelda.fxml").toURI().toURL();		
 		loader.setLocation(url);													
 		System.out.println(loader.getLocation());							
 		Pane root = new Pane(); 									
-		root = loader.load();																
+	//	root = loader.load();																
      	Scene scene = new Scene(root,600,400);											
 		primaryStage.setScene(scene);												
 		primaryStage.show();															
