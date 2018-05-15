@@ -24,9 +24,9 @@ public class ControleurJeu implements Initializable {
 	private int[][] tab;
 	private String image1 = "tiles_12.tsx";
 	private final static Image image2 = new Image("src/projet1/img/tiles_12.png");
-    @FXML private Pane console;
-    @FXML private TilePane terrain;
-    @FXML private ImageView imgView;
+    	@FXML private Pane console;
+    	@FXML private TilePane terrain;
+    	@FXML private ImageView imgView;
     
 	private final static int MROW = 20;
 	private final static int MCOLUMN = 20;
@@ -40,7 +40,7 @@ public class ControleurJeu implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		 	terrain.setPrefRows(MROW);
+		terrain.setPrefRows(MROW);
 	        terrain.setPrefColumns(MCOLUMN);
 	        
 	        tab = nouveauJeu.initTerrain();
@@ -48,15 +48,15 @@ public class ControleurJeu implements Initializable {
 	    	    	
 	    	
 	    	BufferedImage maison;
-			try {
-				maison = ImageIO.read(new File("tiles_12.png").toURI().toURL()).getSubimage(32,32,0,0); 
-				ImageView img1 = new ImageView();
-		    	img1.setImage(SwingFXUtils.toFXImage(maison,null));
-		    	terrain.getChildren().add(img1);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		try {
+			maison = ImageIO.read(new File("tiles_12.png").toURI().toURL()).getSubimage(32,32,0,0); 
+			ImageView img1 = new ImageView();
+		img1.setImage(SwingFXUtils.toFXImage(maison,null));
+		terrain.getChildren().add(img1);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	    	
 	    	
