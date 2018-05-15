@@ -14,9 +14,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.TilePane;
-import projetZelda.modele.Jeu;
 import javafx.stage.Stage;
-
+import projetZelda.modele.Jeu;
 
 public class ControleurJeu implements Initializable {
 	
@@ -24,7 +23,7 @@ public class ControleurJeu implements Initializable {
 	public Jeu nouveauJeu;
 	private int[][] tab;
 	private String image1 = "tiles_12.tsx";
-	private final static Image image2 = new Image("src/projet1/img/tiles_12.png");
+//	private final static Image image2 = new Image("Projet1/src/projet1/vue/tiles_12.png");
     	@FXML private Pane console;
     	@FXML private TilePane terrain;
     	@FXML private ImageView imgView;
@@ -50,15 +49,14 @@ public class ControleurJeu implements Initializable {
 	    	
 	    	BufferedImage maison;
 		try {
-			maison = ImageIO.read(new File("tiles_12.png").toURI().toURL()).getSubimage(32,32,0,0); 
+			maison = ImageIO.read(new File("Projet1/src/projet1/vue/tiles_12.png").toURI().toURL()).getSubimage(0,0,32,32); 
 			ImageView img1 = new ImageView();
-		img1.setImage(SwingFXUtils.toFXImage(maison,null));
-		terrain.getChildren().add(img1);
+			img1.setImage(SwingFXUtils.toFXImage(maison,null));
+			terrain.getChildren().add(img1);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	    	
 	    	
 	}
