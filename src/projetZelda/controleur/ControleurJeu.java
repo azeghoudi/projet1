@@ -49,7 +49,7 @@ public class ControleurJeu implements Initializable {
 	    	
 	    	BufferedImage maison;
 		try {
-			maison = ImageIO.read(new File("Projet1/src/projet1/vue/tiles_12.png").toURI().toURL()).getSubimage(0,0,32,32); 
+			maison = ImageIO.read(new File("src/projetZelda/vue/tiles_12.png").toURI().toURL()).getSubimage(0,0,32,32); 
 			ImageView img1 = new ImageView();
 			img1.setImage(SwingFXUtils.toFXImage(maison,null));
 			terrain.getChildren().add(img1);
