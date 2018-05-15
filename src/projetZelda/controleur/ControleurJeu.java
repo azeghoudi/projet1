@@ -23,7 +23,7 @@ public class ControleurJeu implements Initializable {
 	public Jeu nouveauJeu;
 	private int[][] tab;
 	private String image1 = "tiles_12.tsx";
-//	private final static Image image2 = new Image("Projet1/src/projet1/vue/tiles_12.png");
+//	private final static Image image2 = new Image("src/projetZelda/vue/tiles_12.png");
     	@FXML private Pane console;
     	@FXML private TilePane terrain;
     	@FXML private ImageView imgView;
