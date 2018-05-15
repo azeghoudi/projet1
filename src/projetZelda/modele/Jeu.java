@@ -3,7 +3,7 @@ package projetZelda.modele;
 public class Jeu {
 	
 	private Link hero;
-	protected int[][] terrain;
+	protected int[][] terrain = new int[20][20];
 	
 	public Jeu() {
 		
