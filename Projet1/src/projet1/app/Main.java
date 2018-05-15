@@ -18,8 +18,8 @@ public class Main extends Application {
 		loader.setLocation(url);													
 		System.out.println(loader.getLocation());							
 		Pane root = new Pane(); 									
-	//	root = loader.load();																
-     	Scene scene = new Scene(root,600,400);											
+		root = loader.load();																
+     		Scene scene = new Scene(root,600,400);											
 		primaryStage.setScene(scene);												
 		primaryStage.show();															
 		} catch (Exception e) {
