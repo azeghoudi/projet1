@@ -13,20 +13,27 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-		FXMLLoader loader = new FXMLLoader(); 											
-		URL url = new File("src/projetZelda/vue/jeuZelda.fxml").toURI().toURL();		
+		FXMLLoader loader = new FXMLLoader(); 	
+		
+		// Lien du fichier fxml
+		URL url = new File("src/projetZelda/vue/jeuZelda.fxml").toURI().toURL();	
+		
 		loader.setLocation(url);													
 		System.out.println(loader.getLocation());							
 		Pane root = new Pane(); 									
-		root = loader.load();																
-     		Scene scene = new Scene(root,600,400);											
+		root = loader.load();	
+		
+		// taille de la fenêtre
+     	Scene scene = new Scene(root,600,400);
+     	
 		primaryStage.setScene(scene);												
 		primaryStage.show();															
 		} catch (Exception e) {
 			e.printStackTrace();													
 		}
 	}
-
+	
+	// Lancement du jeu
 	public static void main(String[] args) {
 		launch(args);																	
 	}
