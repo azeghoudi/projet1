@@ -3,24 +3,38 @@ package projetZelda.modele;
 public class Jeu {
 	
 	private Link hero;
-	protected int[][] terrain = new int[20][20];
+	protected int[][] terrain;
 	
+	// Constructeur + initialisation d'un tableau de int = terrain et d'un personnage Link
 	public Jeu() {
-		
+		terrain = new int[20][20];
+		hero = new Link(10,10,5);
 	}
 	
+	// Retourne Link
 	public Link getLink() {
 		return this.hero;
 	}
 	
+	// Retourne le tableau
 	public int[][] getTerrain() {
 		return this.terrain;
 	}
 	
+	// modifie une case du tableau
+	public void setTerrain(int x, int y, int newValeur) {
+		this.terrain[x-1][y-1] = newValeur;
+	}
+	
+	// change de terrain
+	public void newTerrain(int[][] nouveauTerrain) {
+		this.terrain = nouveauTerrain;
+	}
+	
+	// initialise le tableau
 	public int[][] initTerrain() {
 		this.terrain[0][0] = 210;
 		this.terrain[0][1] = 210;
-		
 		this.terrain[0][2] = 210;
 		this.terrain[0][3] = 210;
 		this.terrain[0][4] = 210;
@@ -306,7 +320,7 @@ public class Jeu {
 		this.terrain[14][4] = 210;
 		this.terrain[14][5] = 210;
 		this.terrain[14][6] = 210;
-		this.terrain[14][7] = 210;
+		this.terrain[14][7] = 211;
 		this.terrain[14][8] = 210;
 		this.terrain[14][9] = 210;
 		this.terrain[14][10] = 210;
@@ -422,34 +436,18 @@ public class Jeu {
 		return terrain;
 	}
 	
-	public String imageDe(int i) {
-		String img = "tiles_12.tsx";
-		if (i == 210) { // 210, 1, 2, 3, 4, 5, 6, 25, 26, 27, 28, 29, 30, 49, 50, 51, 52, 53, 54, 73, 74, 75, 76, 77, 78, 
-			   // 97, 98, 99, 100, 101, 102, 265, 266, 267, 268, 32, 33, 34, 35, 56, 57, 58, 59, 80, 81, 82, 83,
-				// 104, 105, 106, 107
-			img = "";
+	// Retourne vrai si colision 
+	public boolean mur(int x, int y) {
+		boolean risque = false;
+		if (this.terrain[x][y] != 210 && (this.terrain[x][y] < 265 || this.terrain[x][y] > 268)) {
+			risque = true;
 		}
-		else if (i == 1) {
-			img = "";
-		}
-		else if (i == 2) {
-			img = "";
-		}
-		else if (i == 3) {
-			img = "";
-		}
-		else if (i == 4) {
-			img = "";
-		}
-		else if (i == 5) {
-			img = "";
-		}
-		else if (i == 6) {
-			img = "";
-		}
-		return img;
+		return risque;
 	}
 	
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													
+	
+/*	
 	public String afficherTab(int[][] tab) {
 		String txt = "";
 		for (int i = 0; i < tab.length; i++) {
@@ -471,6 +469,6 @@ public class Jeu {
 		}
 		return txt;
 	}
-	
+*/	
 	
 }
